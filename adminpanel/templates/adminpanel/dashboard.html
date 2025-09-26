@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'adminpanel/css/dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pawfect Care</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'services' %}">SERVICES</a></li>
+                <li><a href="{% url 'about' %}">ABOUT US</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li><a href="{% url 'admin_dashboard' %}">DASHBOARD</a></li>
+                    {% endif %}
+                    <li>
+                        <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="loginbtn">LOGOUT</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+                {% endif %}
+            </ul>
+            <div class="hambtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!--Main-->
+    <div class="main">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <a href="{% url 'admin_dashboard' %}" class="active">Dashboard</a>
+            <a href="{% url 'admin_packages' %}">Packages</a>
+            <a href="{% url 'admin_employees' %}">Employees</a>
+            <a href="{% url 'admin_customers' %}">Customers</a>
+            <a href="{% url 'admin_messages' %}">Messages</a>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+            </div>
+
+            <!-- Cards -->
+            <div class="cards">
+                <div class="card">
+                    <h3>Employees</h3>
+                    <p>{{ employees_count }}</p>
+                </div>
+                <div class="card">
+                    <h3>Packages</h3>
+                    <p>{{ packages_count }}</p>
+                </div>
+                <div class="card">
+                    <h3>Messages</h3>
+                    <p>{{ messages_count }}</p>
+                </div>
+                <div class="card">
+                    <h3>Customers</h3>
+                    <p>{{ customers_count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

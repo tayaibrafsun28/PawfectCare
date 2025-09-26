@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'adminpanel/css/customers.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pawfect Care - Customers</title>
+</head>
+<body>
+<header>
+    <nav>
+        <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'services' %}">SERVICES</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <li><a href="{% url 'admin_dashboard' %}">DASHBOARD</a></li>
+                {% endif %}
+                <li>
+                    <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="loginbtn">LOGOUT</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+            {% endif %}
+        </ul>
+        <div class="hambtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<div class="main">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+        <a href="{% url 'admin_packages' %}">Packages</a>
+        <a href="{% url 'admin_employees' %}">Employees</a>
+        <a href="{% url 'admin_customers' %}" class="active">Customers</a>
+        <a href="{% url 'admin_messages' %}">Messages</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="customers-header">
+            <h2>Customers</h2>
+        </div>
+
+        <!-- Customers Table -->
+        <table id="customerTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Pet Type</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Package</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.phone }}</td>
+                    <td>{{ customer.pet_type }}</td>
+                    <td>{{ customer.date }}</td>
+                    <td>{{ customer.time }}</td>
+                    <td>{{ customer.package.name }}</td>
+                    <td>
+                        <a href="{% url 'billing' customer.id %}" class="btn view-btn">View</a> |
+                        <a href="{% url 'delete_customer' customer.id %}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7">No customer bookings yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.btn.view-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+</style>
+</body>
+</html>

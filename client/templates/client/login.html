@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated CSS link to use Django static -->
+    <link rel="stylesheet" href="{% static 'client/css/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pawfect Care</title>
+</head>
+
+<body>
+
+<header>
+    <!-- NAVBAR -->
+    <nav>
+        <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'services' %}">SERVICES</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+            <a href="{% url 'login' %}" class="loginbtn">LOGIN</a>
+        </ul>
+
+        <div class="hambtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+
+        <!-- Signup Redirect -->
+        <div class="about">
+            <div class="content">
+                <div class="circle">
+                    <img src="{% static 'client/Assets/s.png' %}" alt="">
+                </div>
+                <h2>Hey Buddy!</h2>
+                <p>Don't have an account yet?<br>To keep connected, please signup now.</p>
+                <a href="{% url 'signup' %}" class="signbtn">Sign Up</a>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form">
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <h1>Login</h1>
+
+                <!-- Show error messages -->
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li style="color:red;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="loginbtn">Login</button>
+            </form>
+
+            <div class="signupextra">
+                <p>
+                    Don’t have an account yet?<br>
+                    Just <a href="{% url 'signup' %}" class="signbtn">Signup</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+
+    <div class="address">
+        <h2>HEAD OFFICE</h2>
+        <p>7,8 Gurudas Sarkar Lane,<br> Narinda, Dhaka - 1100</p>
+        <p>Phone : 01974243177</p>
+    </div>
+
+    <div class="navigation">
+        <h2>NAVIGATIONS</h2>
+        <div class="navlinks">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="socialmedia">
+        <h2>FOLLOW US</h2>
+        <div class="sociallinks">
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Copy Right Claim -->
+<div class="cr">
+    <p>© 2025 All Rights Reserved by PAWFECT CARE</p>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'adminpanel/css/messages.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pawfect Care - Messages</title>
+</head>
+<body>
+<header>
+    <nav>
+        <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'services' %}">SERVICES</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <li><a href="{% url 'admin_dashboard' %}">DASHBOARD</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}" class="loginbtn">LOGOUT</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+            {% endif %}
+        </ul>
+        <div class="hambtn"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<div class="main">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+        <a href="{% url 'admin_packages' %}">Packages</a>
+        <a href="{% url 'admin_employees' %}">Employees</a>
+        <a href="{% url 'admin_customers' %}">Customers</a>
+        <a href="{% url 'admin_messages' %}" class="active">Messages</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h2>Messages</h2>
+        </div>
+
+        <table id="messagesTable">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if messages_list %}
+                    {% for msg in messages_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ msg.name }}</td>
+                        <td>{{ msg.email }}</td>
+                        <td>{{ msg.phone }}</td>
+                        <td>{{ msg.city }}</td>
+                        <td>{{ msg.message|truncatechars:30 }}</td>
+                        <td>{{ msg.date|date:"d M Y H:i" }}</td>
+                        <td>
+                            <button class="view-btn"
+                                data-name="{{ msg.name }}"
+                                data-email="{{ msg.email }}"
+                                data-phone="{{ msg.phone }}"
+                                data-city="{{ msg.city }}"
+                                data-message="{{ msg.message }}">
+                                View
+                            </button> |
+                            <a href="{% url 'delete_message' msg.id %}" onclick="return confirm('Are you sure you want to delete this message?');" class="btn delete-btn">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr><td colspan="8" style="text-align:center;">No messages found.</td></tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="messageModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Message from <span id="modalName"></span></h3>
+    <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+    <p><strong>Phone:</strong> <span id="modalPhone"></span></p>
+    <p><strong>City:</strong> <span id="modalCity"></span></p>
+    <p><strong>Message:</strong></p>
+    <p id="modalMessage"></p>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("messageModal");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".view-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.getElementById("modalName").innerText = btn.dataset.name;
+            document.getElementById("modalEmail").innerText = btn.dataset.email;
+            document.getElementById("modalPhone").innerText = btn.dataset.phone;
+            document.getElementById("modalCity").innerText = btn.dataset.city;
+            document.getElementById("modalMessage").innerText = btn.dataset.message;
+            modal.style.display = "block";
+        });
+    });
+
+    closeBtn.addEventListener("click", () => modal.style.display = "none");
+    window.addEventListener("click", e => { if(e.target == modal) modal.style.display = "none"; });
+});
+</script>
+</body>
+</html>

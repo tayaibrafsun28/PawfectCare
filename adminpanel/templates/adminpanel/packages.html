@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'adminpanel/css/packages.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pawfect Care - Packages</title>
+</head>
+
+<body>
+<header>
+    <nav>
+        <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'services' %}">SERVICES</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <li><a href="{% url 'admin_dashboard' %}">DASHBOARD</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}" class="loginbtn">LOGOUT</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+            {% endif %}
+        </ul>
+        <div class="hambtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<div class="main">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+        <a href="{% url 'admin_packages' %}" class="active">Packages</a>
+        <a href="{% url 'admin_employees' %}">Employees</a>
+        <a href="{% url 'admin_customers' %}">Customers</a>
+        <a href="{% url 'admin_messages' %}">Messages</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Add/Edit Package Form -->
+        <div class="form">
+            {% if package %}
+                <h1 class="formheading">Edit Package</h1>
+                <form method="POST" action="{% url 'edit_package' package.id %}">
+            {% else %}
+                <h1 class="formheading">Add Package</h1>
+                <form method="POST" action="{% url 'admin_packages' %}">
+            {% endif %}
+                {% csrf_token %}
+                
+                <div class="i i1">
+                    <label for="pname">Package Name :</label>
+                    <input type="text" id="pname" name="name" placeholder="Package Name" 
+                        value="{% if package %}{{ package.name }}{% endif %}" required>
+                </div>
+
+                <div class="i i2">
+                    <label for="pprice">Package Price :</label>
+                    <input type="number" id="pprice" name="price" placeholder="Package Price" 
+                        value="{% if package %}{{ package.price }}{% endif %}" required>
+                </div>
+
+                <div class="i i3">
+                    <label for="pdesc">Description :</label>
+                    <textarea id="pdesc" name="description" placeholder="Package Description" required>{% if package %}{{ package.description }}{% endif %}</textarea>
+                </div>
+
+                <button type="submit" class="add">
+                    {% if package %}Update Package{% else %}Add Package{% endif %}
+                </button>
+            </form>
+        </div>
+
+        <!-- Packages Table -->
+        <div class="packages-header">
+            <h2>Package List</h2>
+        </div>
+
+        <table id="packageTable">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Package Name</th>
+                    <th>Package Price</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in packages %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ p.name }}</td>
+                    <td>${{ p.price }}</td>
+                    <td>{{ p.description }}</td>
+                    <td>
+                        <a href="{% url 'edit_package' p.id %}"  class="btn edit-btn">Edit</a> |
+                        <a href="{% url 'delete_package' p.id %}" onclick="return confirm('Are you sure you want to delete this package?');"  class="btn delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No packages yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<style>
+.btn.edit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+</style>
+
+</body>
+</html>

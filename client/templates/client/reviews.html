@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pawfect Care - Reviews</title>
+
+  <link rel="stylesheet" href="{% static 'client/css/reviews.css' %}" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <p class="logo">
+        <span class="logo1st">PAWFECT</span>
+        <span class="logo2nd">CARE</span>
+      </p>
+      <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'services' %}">SERVICES</a></li>
+        <li><a href="{% url 'about' %}">ABOUT US</a></li>
+        <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}" class="loginbtn">LOGOUT</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+        {% endif %}
+      </ul>
+      <div class="hambtn">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Review Form -->
+      <div class="postreview">
+        <img src="{% static 'client/Assets/reviews.jpg' %}" alt="Reviews background" class="postreview-bg">
+
+        <div class="review-form-section">
+          <h2>Leave a Review</h2>
+          <form method="POST" id="reviewForm" novalidate>
+            {% csrf_token %}
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <textarea name="reviewText" id="reviewText" placeholder="Write your review..." required></textarea>
+
+            <!-- Star Rating -->
+            <div class="star-rating" role="radiogroup" aria-label="Star Rating">
+              <span data-value="1" tabindex="0">★</span>
+              <span data-value="2" tabindex="0">★</span>
+              <span data-value="3" tabindex="0">★</span>
+              <span data-value="4" tabindex="0">★</span>
+              <span data-value="5" tabindex="0">★</span>
+            </div>
+
+            <input type="hidden" name="rating" id="rating" required>
+            <button type="submit">Submit Review</button>
+
+            {% if messages %}
+              <ul class="feedback">
+                {% for message in messages %}
+                  <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+
+      <!-- Reviews List -->
+      <div class="reviews">
+        <div class="reviewsheading">
+          <p class="title">Customer Feedbacks</p>
+        </div>
+        <div class="feedbacks">
+          {% for review in reviews %}
+            <div class="f">
+              <div class="rating">&#x2605; {{ review.rating }}</div><br>
+              <p class="userf">“{{ review.reviewText|escape }}”</p><br><br>
+              <p class="user">{{ review.name|escape }}</p>
+            </div>
+          {% empty %}
+            <p>No reviews yet. Be the first to leave one!</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+    <div class="address">
+      <h2>HEAD OFFICE</h2>
+      <p>7,8 Gurudas Sarkar Lane,<br> Narinda, Dhaka - 1100</p>
+      <p>Phone : 01974243177</p>
+    </div>
+    <div class="navigation">
+      <h2>NAVIGATIONS</h2>
+      <div class="navlinks">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="socialmedia">
+      <h2>FOLLOW US</h2>
+      <div class="sociallinks">
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cr">
+    <p>© 2025 All Rights Reserved by PAWFECT CARE</p>
+  </div>
+
+  <!-- JS only for star selection -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const stars = document.querySelectorAll('.star-rating span');
+      const ratingInput = document.getElementById('rating');
+      let selectedRating = 0;
+
+      function updateStars(r) {
+        stars.forEach(star => {
+          if (Number(star.dataset.value) <= Number(r)) {
+            star.classList.add('selected');
+            star.setAttribute('aria-checked', 'true');
+          } else {
+            star.classList.remove('selected');
+            star.setAttribute('aria-checked', 'false');
+          }
+        });
+      }
+
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          selectedRating = star.dataset.value;
+          ratingInput.value = selectedRating;
+          updateStars(selectedRating);
+        });
+        star.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectedRating = star.dataset.value;
+            ratingInput.value = selectedRating;
+            updateStars(selectedRating);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

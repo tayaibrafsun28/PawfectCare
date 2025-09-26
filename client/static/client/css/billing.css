@@ -1,0 +1,955 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+    background-color: #f1f1f1;
+}
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+.hambtn{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+main .container {
+  width: 100%;
+  padding: 10vh 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.billsummary{
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  padding: 10vh 4vw;
+  border-radius: 2vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 5vh;
+  text-align: center;
+  color: orangered;
+}
+
+.section {
+  margin-bottom: 4vh;
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 2vh;
+  color: #333;
+  border-bottom: 2px solid orangered;
+  padding-bottom: 0.5vh;
+}
+
+.section p {
+  font-size: 18px;
+  margin-bottom: 1.2vh;
+}
+
+.section p span {
+  font-weight: 500;
+  color: #444;
+}
+
+.total {
+  background-color: #f9f9f9;
+  padding: 3vh;
+  border: 2px dashed orangered;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.total h2 {
+  font-size: 28px;
+  margin-bottom: 2vh;
+  color: black;
+}
+
+#amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: orangered;
+}
+
+
+.done{
+    text-decoration: none;
+    font-size: 16px;
+    margin: 2vh 0vh 2vh auto;
+    padding: 1.3vh 2.3vw;
+    border-radius: 10px;
+    color:  white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 1px 1px 2px rgb(102, 102, 102);
+}
+
+.done:hover{
+    color: white;
+    background-color: orangered;
+    box-shadow: none;
+}
+
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 35vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+
+
+
+/* Tablet */
+
+
+@media screen and (max-width: 1024px) {
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+main .container {
+  width: 100%;
+  padding: 10vh 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.billsummary{
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  padding: 7vh 4vw;
+  border-radius: 2vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 7vh;
+  text-align: center;
+  color: orangered;
+}
+
+.section {
+  margin-bottom: 4vh;
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 2vh;
+  color: #333;
+  border-bottom: 2px solid orangered;
+  padding-bottom: 0.5vh;
+}
+
+.section p {
+  font-size: 18px;
+  margin-bottom: 2vh;
+}
+
+.section p span {
+  font-weight: 500;
+  color: #444;
+}
+
+.total {
+  background-color: #f9f9f9;
+  padding: 3vh;
+  border: 2px dashed orangered;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.total h2 {
+  font-size: 28px;
+  margin-bottom: 2vh;
+  color: black;
+}
+
+#amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: orangered;
+}
+
+
+.done{
+    text-decoration: none;
+    font-size: 16px;
+    margin: 2vh 0vh 2vh auto;
+    padding: 1.25vh 5vw;
+    border-radius: 10px;
+    color:  white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 1px 1px 2px rgb(102, 102, 102);
+}
+
+.done:hover{
+    color: white;
+    background-color: orangered;
+    box-shadow: none;
+}
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 60vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3vh 3vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+}
+
+
+    /* Mobile */
+
+
+@media screen and (max-width: 600px){
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 16px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+main .container {
+  width: 100%;
+  padding: 10vh 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.billsummary{
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  padding: 7vh 5vw;
+  border-radius: 2vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 7vh;
+  text-align: center;
+  color: orangered;
+}
+
+.section {
+  margin-bottom: 4vh;
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 2vh;
+  color: #333;
+  border-bottom: 2px solid orangered;
+  padding-bottom: 0.5vh;
+}
+
+.section p {
+  font-size: 18px;
+  margin-bottom: 2vh;
+}
+
+.section p span {
+  font-weight: 500;
+  color: #444;
+}
+
+.total {
+  background-color: #f9f9f9;
+  padding: 3vh;
+  border: 2px dashed orangered;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.total h2 {
+  font-size: 28px;
+  margin-bottom: 2vh;
+  color: black;
+}
+
+#amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: orangered;
+}
+
+
+.done{
+    text-decoration: none;
+    font-size: 16px;
+    margin: 2vh 0vh 2vh auto;
+    padding: 1.25vh 7vw;
+    border-radius: 10px;
+    color:  white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 1px 1px 2px rgb(102, 102, 102);
+}
+
+.done:hover{
+    color: white;
+    background-color: orangered;
+    box-shadow: none;
+}
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 80vh;
+    background-color: black;
+    padding: 7vh 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2vh 4vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 21px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height:4vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    word-spacing: 2px;
+}
+
+}

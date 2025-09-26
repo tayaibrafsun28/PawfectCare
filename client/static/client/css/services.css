@@ -1,0 +1,911 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #f1f1f1;
+}
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+.hambtn{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+
+/* SERVICES SECTION */
+
+.service{
+    margin: 8vh 6vw 10vh;
+}
+
+.section{
+    margin: 15vh 0vw 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .dogs{
+    width: 1000px;
+}
+
+.serviceheading{
+    width: 80%;
+    height: 10vh;
+    background-color: black;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceheading p{
+    font-size: 56px;
+    color: white;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vh;
+}
+
+.paw{
+     position: relative;
+     overflow: visible;
+}
+
+.paw-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 240px; 
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 0;
+}
+
+
+.s{
+    padding: 5vh 5vw;
+    background-color: rgba(255, 68, 0, 0.780);
+    box-shadow: 1px 1px 20px black;
+    border-radius: 30px;
+}
+
+.s h1{
+    margin-bottom: 4vh;
+    font-size: 36px;
+}
+
+
+.s h2{
+    margin: 3vh 0vw 1vh;
+    font-size: 24px;
+    color: #ffcebc;
+    text-shadow: 3px 2px 0px black;
+}
+
+.s p{
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+
+
+.services .booknowbtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 0;
+    padding: 15px 30px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.services .booknowbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 35vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+/* Tablet */
+
+
+@media screen and (max-width: 1024px) {
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+/* SERVICES SECTION */
+
+.service{
+    margin: 8vh 6vw 10vh;
+}
+
+.section{
+    margin-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section .dogs{
+    width: 600px;
+}
+
+.serviceheading{
+    width: 100%;
+    height: 7vh;
+    background-color: black;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceheading p{
+    font-size: 48px;
+    color: white;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5vh;
+}
+
+.paw{
+     position: relative;
+     overflow: visible;
+}
+
+.paw-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 280px; 
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 0;
+}
+
+
+.s{
+    padding: 5vh 5vw;
+    background-color: rgba(255, 68, 0, 0.780);
+    box-shadow: 1px 1px 20px black;
+    border-radius: 30px;
+}
+
+.s h1{
+    margin-bottom: 4vh;
+    font-size: 48px;
+}
+
+
+.s h2{
+    margin: 3vh 0vw 1vh;
+    font-size: 30px;
+    color: #ffcebc;
+    text-shadow: 3px 2px 0px black;
+}
+
+
+.s p{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+
+.services .booknowbtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 0;
+    padding: 15px 30px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.services .booknowbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 60vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3vh 3vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+}
+
+
+    /* Mobile */
+
+
+@media screen and (max-width: 600px){
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 16px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+/* SERVICES SECTION */
+
+
+.service{
+    margin: 6vh 5vw;
+}
+
+.section{
+    margin-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section .dogs{
+    width: 300px;
+}
+
+.serviceheading{
+    width: 100%;
+    height: 6vh;
+    background-color: black;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceheading p{
+    font-size: 30px;
+    color: white;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5vh;
+}
+
+
+.paw{
+     position: relative;
+     overflow: visible;
+}
+
+.paw-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 180px; 
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 0;
+}
+
+.s{
+    padding: 5vh 9vw;
+    background-color: rgba(255, 68, 0, 0.780);
+    box-shadow: 1px 1px 20px black;
+    border-radius: 30px;
+}
+
+.s h1{
+    margin-bottom: 4vh;
+    font-size: 30px;
+}
+
+.s h2{
+    margin: 3vh 0vw 1vh;
+    font-size: 24px;
+    color: #ffcebc;
+    text-shadow: 3px 2px 0px black;
+}
+
+.s p{
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+
+.services .booknowbtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 0 0;
+    padding: 10px 20px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.services .booknowbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+/* Footer SECTION */
+
+
+footer{
+    height: 80vh;
+    background-color: black;
+    padding: 7vh 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2vh 4vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 21px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height:4vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    word-spacing: 2px;
+}
+
+}

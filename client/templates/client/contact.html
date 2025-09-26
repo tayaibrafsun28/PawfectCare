@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'client/css/contact.css' %}">
+  <title>Contact Us</title>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+      <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'services' %}">SERVICES</a></li>
+        <li><a href="{% url 'about' %}">ABOUT US</a></li>
+        <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}" class="loginbtn">LOGOUT</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+        {% endif %}
+      </ul>
+      <div class="hambtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="container">
+      <div class="upper">
+        <div class="content1">
+          <div class="c1">
+            <h1>Talk with our sales team</h1>
+            <p>
+              We're here to help with any questions, feedback, or support you may need.
+              Feel free to contact us through email, phone, or the form below.
+              Our team will get back to you as soon as possible.
+            </p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="content2">
+          <div class="form">
+            <form method="POST" action="{% url 'contact' %}">
+              {% csrf_token %}
+              <h1 class="formheading">Contact With Us</h1>
+
+              <div class="i i1">
+                <label for="cname">Username :</label>
+                <input type="text" id="cname" name="name" placeholder="Username" required>
+              </div>
+
+              <div class="i i2">
+                <label for="cemail">Email :</label>
+                <input type="email" id="cemail" name="email" placeholder="Email" required>
+              </div>
+
+              <div class="i i3">
+                <label for="cphone">Phone Number :</label>
+                <input type="number" id="cphone" name="phone" placeholder="Phone Number">
+              </div>
+
+              <div class="i i4">
+                <label for="ccity">City :</label>
+                <select id="ccity" name="city">
+                  <option value="">--Select City--</option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Barishal">Barishal</option>
+                  <option value="Cox's Bazar">Cox's Bazar</option>
+                </select>
+              </div>
+
+              <div class="i i5">
+                <label for="cmessage">Message :</label>
+                <textarea id="cmessage" name="message" required></textarea>
+              </div>
+
+              <button type="submit" class="submit">Submit</button>
+            </form>
+
+            <!-- Success / Error messages -->
+            {% if messages %}
+              <ul class="feedback">
+                {% for message in messages %}
+                  <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="down">
+        <div class="content3">
+          <div class="c2">
+            <img src="{% static 'client/Assets/contact.png' %}" alt="Contact Illustration" width="850px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+    <div class="address">
+      <h2>HEAD OFFICE</h2>
+      <p>7,8 Gurudas Sarkar Lane,<br> Narinda, Dhaka - 1100</p>
+      <p>Phone : 01974243177</p>
+    </div>
+    <div class="navigation">
+      <h2>NAVIGATIONS</h2>
+      <div class="navlinks">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="socialmedia">
+      <h2>FOLLOW US</h2>
+      <div class="sociallinks">
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cr">
+    <p>© 2025 All Rights Reserved by PAWFECT CARE</p>
+  </div>
+
+</body>
+</html>

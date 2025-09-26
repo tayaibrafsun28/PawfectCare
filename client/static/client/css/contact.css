@@ -1,0 +1,1011 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+body{
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+
+}
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+.hambtn{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+    /* MAIN */
+
+
+/* Container */
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.upper{
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(238,235,234);
+    display: flex;
+}
+
+.down{
+    width: 100%;
+    height: 55vh;
+    background-color: white;
+}
+
+.content1{
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content2{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content3{
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.c1{
+    width: 40vw;
+    height: 30vh;
+    padding: 5vw 5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.c1 h1{
+    font-size: 40px;
+}
+
+.c1 p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.c2{
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -7vh;
+}
+
+.c3{
+    border-radius: 30px;
+    color: white;
+    padding: 2vh 6vw;
+    position: relative;
+    top: -5vh;
+    left: 1vw;
+}
+
+.form{
+    width: 45vw;
+    height: 75vh;
+    padding: 5vw 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(121, 121, 121);
+}
+
+form{
+    padding: 5vh 5vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+}
+.formheading{
+    margin-bottom: 5vh;
+    font-size: 42px;
+}
+
+.form label{
+    text-align: start;
+    width: 7vw;
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 2vw;
+}
+
+.form input{
+    width: 20vw;
+    display: inline-block;
+    padding: 1.5vh 2vw;
+    border: none;
+    background-color: rgb(235, 235, 235);
+}
+.form select, textarea{
+    width: 20vw;
+    padding: 1.5vh 2vw;
+    border: none;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.submit{
+    text-decoration: none;
+    font-size: 16px;
+    margin: 2vh 0vh 2vh auto;
+    padding: 1.3vh 2.3vw;
+    border-radius: 10px;
+    color:  white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 1px 1px 2px rgb(102, 102, 102);
+}
+
+.submit:hover{
+    color: white;
+    background-color: orangered;
+    box-shadow: none;
+}
+
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 35vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+
+
+
+
+/* Tablet */
+
+
+@media screen and (max-width: 1024px) {
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+    /* MAIN */
+
+
+/* Container */
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.upper{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(238,235,234);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container .down{
+    display: none;
+}
+
+.content1 .c1{
+    display: none;
+
+}
+
+.content2{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content3 .c2{
+    display: none;
+}
+
+
+.c3{
+    border-radius: 30px;
+    color: white;
+    padding: 2vh 6vw;
+}
+
+.form{
+    width: 75vw;
+    height: 75vh;
+    margin: 10vh 0vw;
+    padding: 5vw 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(121, 121, 121);
+    background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(58, 58, 58, 0.9)), url(Assets/b.png);
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    border-radius: 5vw; 
+}
+
+
+
+form{
+    padding: 5vh 5vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+    color: white;
+}
+.formheading{
+    color: orangered;
+    margin-bottom: 5vh;
+    font-size: 48px;
+}
+
+.form label{
+    text-align: start;
+    width: 15vw;
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 5vw;
+}
+
+.form input{
+    width: 20vw;
+    display: inline-block;
+    padding: 1.5vh 2vw;
+    border: none;
+    background-color: rgb(235, 235, 235);
+}
+.form select, textarea{
+    width: 20vw;
+    padding: 1.5vh 2vw;
+    border: none;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.submit{
+    text-decoration: none;
+    font-size: 16px;
+    margin: 2vh 0vh 2vh auto;
+    padding: 1.25vh 5vw;
+    border-radius: 10px;
+    color: white;
+    background-color: orangered;
+    border: none;
+    box-shadow: 1px 1px 2px rgb(102, 102, 102);
+}
+
+.submit:hover{
+    color: orangered;
+    background-color: black;
+    box-shadow: none;
+}
+
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 60vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3vh 3vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+}
+
+
+    /* Mobile */
+
+
+@media screen and (max-width: 600px){
+
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+    /* MAIN */
+
+
+/* Container */
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.upper{
+    width: 100%;
+    height: 120vh;
+    background-color: rgb(238,235,234);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container .down{
+    display: none;
+}
+
+.content1{
+    display: none;
+
+}
+
+.content2{
+    width: 50%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content3{
+    display: none;
+}
+
+
+.form{
+    width: 80vw;
+    height: 90vh;
+    margin: 10vh 0vw;
+    padding: 5vw 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(121, 121, 121);
+    background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(58, 58, 58, 0.9)), url(Assets/b.png);
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    border-radius: 5vw; 
+}
+
+
+
+form{
+    padding: 5vh 5vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+    color: white;
+}
+
+.form form .i{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+
+.formheading{
+    color: orangered;
+    margin-bottom: 5vh;
+    font-size: 24px;
+}
+
+.form label{
+    text-align: start;
+    width: 50vw;
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 5vw;
+}
+
+.form input{
+    width: 50vw;
+    display: inline-block;
+    padding: 1.5vh 2vw;
+    border: none;
+    background-color: rgb(235, 235, 235);
+}
+.form select, textarea{
+    width: 50vw;
+    padding: 1.5vh 2vw;
+    border: none;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.submit{
+    text-decoration: none;
+    font-size: 16px;
+    margin: 2vh 0vh 2vh auto;
+    padding: 1.25vh 5vw;
+    border-radius: 10px;
+    color: white;
+    background-color: orangered;
+    border: none;
+    box-shadow: 1px 1px 2px rgb(102, 102, 102);
+}
+
+.submit:hover{
+    color: orangered;
+    background-color: black;
+    box-shadow: none;
+}
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 80vh;
+    background-color: black;
+    padding: 7vh 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2vh 4vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 21px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height:4vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    word-spacing: 2px;
+}
+
+}

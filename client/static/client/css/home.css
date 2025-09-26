@@ -1,0 +1,1656 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #f1f1f1;
+}
+
+
+
+/* PC FHD */
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+.hambtn{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+/* HERO SECTION */
+
+
+.hero{
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.hero-bg{
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 85vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-mobilebg{
+    display: none;
+}
+
+.hero .content{
+    padding: 27vh 6vw 0;
+    line-height: 1.4;
+}
+
+.hero .welcome{
+    font-size: 48px;
+    font-weight: lighter;
+}
+
+.hero .name{
+    font-size: 96px;
+}
+
+.hero .name .logo2nd{
+    color: orangered;
+}
+
+.hero .tagline{
+    font-size: 30px;
+    font-weight: lighter;
+    word-spacing: 8px;
+}
+
+.hero .explorebtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 6vw;
+    padding: 15px 30px;
+    background-color: orangered;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hero .explorebtn:hover{
+    background-color: white;
+    color: orangered;
+}
+
+/* SERVICES SECTION */
+
+.service{
+    margin: 8vh 6vw 10vh;
+}
+
+.section{
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .dogs{
+    width: 1000px;
+}
+
+.serviceheading{
+    width: 80%;
+    height: 10vh;
+    background-color: black;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceheading p{
+    font-size: 56px;
+    color: white;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vh;
+}
+
+.paw{
+     position: relative;
+     overflow: visible;
+}
+
+.paw-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 240px; 
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 0;
+}
+
+
+.s{
+    padding: 5vh 5vw;
+    background-color: rgba(255, 68, 0, 0.780);
+    box-shadow: 1px 1px 20px black;
+    border-radius: 30px;
+}
+
+.s h1{
+    margin-bottom: 4vh;
+    font-size: 36px;
+}
+
+
+.s h2{
+    margin: 3vh 0vw 1vh;
+    font-size: 24px;
+    color: #ffcebc;
+    text-shadow: 3px 2px 0px black;
+}
+
+.s p{
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+
+
+.services .booknowbtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 0;
+    padding: 15px 30px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.services .booknowbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+/* WHY US SECTION */
+.whyus {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background image (moved from CSS) */
+.whyus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right bottom;
+    z-index: -1; /* stays in the background */
+}
+
+/* Foreground image */
+.whyus-img {
+    position: absolute;
+    left: 3vw;
+    bottom: -7vh;
+    width: 750px;
+}
+
+/* Text & reasons */
+.reasons {
+    width: 50vw;
+    position: absolute;
+    right: 3vw;
+    top: 7vh;
+    padding: 5vh 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh 0;
+}
+
+.reasons .whyusheading p {
+    font-size: 72px;
+    font-weight: bold;
+    color: white;
+}
+
+.reasons p {
+    font-size: 28px;
+    color: white;
+}
+
+
+/* ABOUT US SECTION */
+
+.wrapper{
+    height: 115vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.aboutus{
+    padding: 10vh 5vw;
+    width: 65%;
+    background-color: white;
+    position: absolute;
+    top: -5vh;
+    border-radius: 100px;
+    box-shadow: 1px 1px 20px rgb(194, 194, 194);
+
+}
+
+.a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    margin-bottom: 0;
+}
+
+.a h1{
+    font-size: 52px;
+    color: orangered;
+}
+
+.a p{
+    font-size: 21px;
+}
+
+/* Review SECTION */
+
+
+.reviews{
+    padding: 18vh 6vw 7vh;
+    background-color: rgba(255, 68, 0, 0.780);
+
+}
+
+.reviews .reviewsheading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7vh;
+}
+
+
+.reviews .seemorebtn{
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reviews .seemorebtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+.title{
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.feedbacks{
+    margin: 3vh 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+.rating{
+    color: rgb(252, 172, 0);
+    font-size: 21px;
+}
+
+.userf{
+    font-size: 24px;
+}
+
+.user{
+    color: rgb(83, 83, 83);
+    font-size: 21px;
+}
+
+
+.f{
+    padding: 3vh 3vw;
+    background-color: rgb(247, 246, 246);
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px rgb(73, 73, 73);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 35vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+
+
+
+
+/* Tablet */
+
+
+@media screen and (max-width: 1024px) {
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+/* HERO SECTION */
+
+
+.hero{
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.hero .content{
+    padding: 18vh 6vw 0;
+    line-height: 1.4;
+}
+
+.hero-mobilebg{
+    display: none;
+}
+
+
+.hero-bg{
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+
+.hero .welcome{
+    font-size: 36px;
+    font-weight: lighter;
+}
+
+.hero .name{
+    font-size: 72px;
+}
+
+.hero .name .logo2nd{
+    color: orangered;
+}
+
+.hero .tagline{
+    font-size: 24px;
+    font-weight: lighter;
+    word-spacing: 8px;
+}
+
+.hero .explorebtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 6vw;
+    padding: 15px 30px;
+    background-color: orangered;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hero .explorebtn:hover{
+    background-color: white;
+    color: orangered;
+}
+
+/* SERVICES SECTION */
+
+.service{
+    margin: 8vh 6vw 10vh;
+}
+
+.section{
+    margin-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section .dogs{
+    width: 600px;
+}
+
+.serviceheading{
+    width: 100%;
+    height: 7vh;
+    background-color: black;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceheading p{
+    font-size: 48px;
+    color: white;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5vh;
+}
+
+.paw{
+     position: relative;
+     overflow: visible;
+}
+
+.paw-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 280px; 
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 0;
+}
+
+
+.s{
+    padding: 5vh 5vw;
+    background-color: rgba(255, 68, 0, 0.780);
+    box-shadow: 1px 1px 20px black;
+    border-radius: 30px;
+}
+
+.s h1{
+    margin-bottom: 4vh;
+    font-size: 48px;
+}
+
+
+.s h2{
+    margin: 3vh 0vw 1vh;
+    font-size: 30px;
+    color: #ffcebc;
+    text-shadow: 3px 2px 0px black;
+}
+
+
+.s p{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+
+.services .booknowbtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 0;
+    padding: 15px 30px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.services .booknowbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+
+/* WHY US SECTION */
+.whyus {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background image (kept visible) */
+.whyus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right bottom;
+    z-index: -1;
+}
+
+/* Only hide the foreground illustration on tablet */
+.whyus-img {
+    display: none;
+    left: 3vw;
+    bottom: -3vh;
+    width: 280px;
+}
+
+
+.reasons{
+    width: 100%;
+    padding: 2vh 10vw 5vh 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.reasons .r{
+    font-size: 36px;
+}
+
+
+.reasons .whyusheading p{
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+}
+
+.reasons p{
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+
+/* ABOUT US SECTION */
+
+.wrapper{
+    height: 170vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.aboutus{
+    padding: 10vh 5vw;
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    top: -2vh;
+    border-radius: 100px;
+    box-shadow: 1px 1px 20px rgb(194, 194, 194);
+
+}
+
+.a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    margin-bottom: 0;
+}
+
+.details{
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.a2{
+    flex-direction: column-reverse;
+}
+
+.d3{
+    margin-bottom: 0;
+}
+.a h1{
+    font-size: 52px;
+    color: orangered;
+}
+
+.a p{
+    font-size: 24px;
+}
+
+/* Review SECTION */
+
+
+.reviews{
+    padding: 15vh 6vw 7vh;
+    background-color: rgba(255, 68, 0, 0.780);
+
+}
+
+.reviews .reviewsheading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7vh;
+}
+
+
+.reviews .seemorebtn{
+    text-decoration: none;
+    padding: 12px 25px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;    
+}
+
+.reviews .seemorebtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+.title{
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.feedbacks{
+    margin: 3vh 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.f3{
+    display: none;
+}
+
+.rating{
+    color: rgb(252, 172, 0);
+    font-size: 21px;
+}
+
+.userf{
+    font-size: 21px;
+}
+
+.user{
+    color: rgb(83, 83, 83);
+    font-size: 21px;
+}
+
+
+.f{
+    padding: 3vh 3vw;
+    background-color: rgb(247, 246, 246);
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px rgb(73, 73, 73);
+
+}
+
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 60vh;
+    background-color: black;
+    padding: 7vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3vh 3vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 30px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height: 5vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    word-spacing: 2px;
+}
+
+}
+
+    /* Mobile */
+
+
+@media screen and (max-width: 600px){
+
+
+    /* NAVBAR */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 6vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav .logo .logo1st{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+nav .logo .logo2nd{
+    font-size: 16px;
+    font-weight: bold;
+    color: orangered;
+
+}
+
+
+.hambtn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hambtn span {
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: none;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(255, 69, 0);
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul .loginbtn{
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 4px 21px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+nav ul .loginbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+/* HERO SECTION */
+
+
+.hero {
+    position: relative;
+    height: 60vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Hide desktop bg */
+.hero-bg {
+    display: none;
+}
+
+/* Mobile background */
+.hero-mobilebg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2; /* pushed behind overlay */
+}
+
+/* Black transparent overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75); /* adjust 0.5 = 50% transparency */
+    z-index: -1; /* sits above bg, below content */
+}
+
+/* Content */
+.hero .content {
+    position: relative;
+    padding: 0 6vw;
+    line-height: 1.4;
+    z-index: 1;
+}
+
+.hero .welcome{
+    font-size: 21px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.hero .name{
+    font-size: 42px;
+    text-align: center;
+}
+
+.hero .name .logo2nd{
+    color: orangered;
+}
+
+.hero .tagline{
+    font-size: 16px;
+    font-weight: lighter;
+    word-spacing: 7px;
+    text-align: center;
+}
+
+.hero .explorebtn{
+    text-decoration: none;
+    margin: 3vh 6vw;
+    padding: 10px 20px;
+    background-color: orangered;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero .explorebtn:hover{
+    background-color: white;
+    color: orangered;
+}
+
+/* SERVICES SECTION */
+
+.service{
+    margin: 6vh 5vw;
+}
+
+.section{
+    margin-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section .dogs{
+    width: 300px;
+}
+
+.serviceheading{
+    width: 100%;
+    height: 6vh;
+    background-color: black;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceheading p{
+    font-size: 30px;
+    color: white;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5vh;
+}
+
+
+.paw{
+     position: relative;
+     overflow: visible;
+}
+
+.paw-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 180px; 
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 0;
+}
+
+.s{
+    padding: 5vh 9vw;
+    background-color: rgba(255, 68, 0, 0.780);
+    box-shadow: 1px 1px 20px black;
+    border-radius: 30px;
+}
+
+.s h1{
+    margin-bottom: 4vh;
+    font-size: 30px;
+}
+
+.s h2{
+    margin: 3vh 0vw 1vh;
+    font-size: 24px;
+    color: #ffcebc;
+    text-shadow: 3px 2px 0px black;
+}
+
+.s p{
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+
+.services .booknowbtn{
+    display: inline-block;
+    text-decoration: none;
+    margin: 4vh 0 0;
+    padding: 10px 20px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.services .booknowbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+/* WHY US SECTION */
+
+
+  .whyus {
+      width: 100%;
+      height: 60vh;
+      position: relative;
+      overflow: hidden;
+  }
+
+  /* Background image (always visible) */
+  .whyus-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right bottom;
+      z-index: -1;
+  }
+
+  /* Hide the foreground illustration only */
+  .whyus-img {
+      display: none;
+  }
+
+.reasons{
+    width: 100%;
+    padding: 2vh 0vw 5vh 12vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.reasons .r{
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+
+.reasons .whyusheading p{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+/* ABOUT US SECTION */
+
+.wrapper{
+    height: 160vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.aboutus{
+    padding: 10vh 5vw;
+    width: 90%;
+    background-color: white;
+    position: absolute;
+    top: auto;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px rgb(194, 194, 194);
+}
+
+.aboutus .img img{
+    width: 250px;
+}
+
+.a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    margin-bottom: 0;
+}
+
+.details{
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.a2{
+    flex-direction: column-reverse;
+}
+
+.d3{
+    margin-bottom: 0;
+}
+.a h1{
+    font-size: 36px;
+    color: orangered;
+}
+
+.a p{
+    font-size: 16px;
+}
+
+/* Review SECTION */
+
+
+.reviews{
+    padding: 10vh 6vw 7vh;
+    background-color: rgba(255, 68, 0, 0.780);
+
+}
+
+.reviews .reviewsheading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7vh;
+}
+
+
+.reviews .seemorebtn{
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;    
+}
+
+.reviews .seemorebtn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.feedbacks{
+    margin: 3vh 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.rating{
+    color: rgb(252, 172, 0);
+    font-size: 21px;
+}
+
+.userf{
+    font-size: 21px;
+}
+
+.user{
+    color: rgb(83, 83, 83);
+    font-size: 21px;
+}
+
+
+.f{
+    padding: 3vh 3vw;
+    background-color: rgb(247, 246, 246);
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px rgb(73, 73, 73);
+}
+
+.f3{
+    display: block;
+}
+
+
+/* Footer SECTION */
+
+
+footer{
+    height: 80vh;
+    background-color: black;
+    padding: 7vh 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2vh 4vw;
+}
+
+footer .logo, 
+footer .address{
+    flex: 1 1 45%;
+}
+
+footer .navigation, 
+footer .socialmedia{
+    flex: 1 1 45%;
+}
+
+footer .logo{
+    font-size: 21px;
+    color: rgb(252, 252, 252);
+}
+
+footer .logo .logo2nd{
+    color: orangered;
+}
+
+footer h2{
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer .address p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .navlinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .navlinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .navlinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .navlinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+
+footer .sociallinks ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .sociallinks ul li{
+    list-style: none;
+    text-decoration: none;
+}
+footer .sociallinks ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+footer .sociallinks ul li a:hover{
+    text-decoration: none;
+    color: orangered;
+}
+
+.cr p{
+    height:4vh;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    word-spacing: 2px;
+}
+
+}

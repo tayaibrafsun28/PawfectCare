@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'client/css/billing.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pawfect Care - Billing</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+      <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'services' %}">SERVICES</a></li>
+        <li><a href="{% url 'about' %}">ABOUT US</a></li>
+        <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}" class="loginbtn">LOGOUT</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}" class="loginbtn">LOGIN</a></li>
+        {% endif %}
+      </ul>
+      <div class="hambtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="container">
+      <div class="billsummary">
+        <h1>Billing Summary</h1>
+
+        <!-- Personal Details -->
+        <div class="section">
+          <h2>Personal Details</h2>
+          <p><strong>Name:</strong> {{ booking.name }}</p>
+          <p><strong>Email:</strong> {{ booking.email }}</p>
+          <p><strong>Phone:</strong> {{ booking.phone }}</p>
+          <p><strong>Area:</strong> {{ booking.area }}</p>
+          <p><strong>Address:</strong> {{ booking.address }}</p>
+        </div>
+
+        <!-- Pet Details -->
+        <div class="section">
+          <h2>Pet Details</h2>
+          <p><strong>Pet Type:</strong> {{ booking.pet_type }}</p>
+          <p><strong>Breed:</strong> {{ booking.breed }}</p>
+          <p><strong>Vaccinated:</strong> {{ booking.vaccinated }}</p>
+          <p><strong>Food Preference:</strong> {{ booking.food_pref }}</p>
+          <p><strong>Additional Notes:</strong> {{ booking.pet_notes }}</p>
+        </div>
+
+        <!-- Booking Details -->
+        <div class="section">
+          <h2>Booking Details</h2>
+          <p><strong>Date:</strong> {{ booking.date }}</p>
+          <p><strong>Drop-off Time:</strong> {{ booking.time }}</p>
+          <p><strong>Selected Package:</strong> {{ booking.package.name }}</p>
+          <p><strong>Food Provided:</strong> {{ booking.food_source }}</p>
+          <p><strong>Additional Notes:</strong> {{ booking.booking_notes }}</p>
+        </div>
+
+        <!-- Total Amount -->
+        <div class="section total">
+          <h2>Total Amount</h2>
+          <p><strong>Amount to Pay:</strong> ৳ {{ booking.package.price }}</p>
+        </div>
+
+        <a href="{% url 'home' %}" class="done">Done</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p>
+    <div class="address">
+      <h2>HEAD OFFICE</h2>
+      <p>7,8 Gurudas Sarkar Lane,<br> Narinda, Dhaka - 1100</p>
+      <p>Phone : 01974243177</p>
+    </div>
+  </footer>
+
+</body>
+</html>
