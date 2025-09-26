@@ -30,6 +30,10 @@ nav{
     z-index: 1000;
 }
 
+nav a{
+    text-decoration: none;
+}
+
 nav .logo .logo1st{
     font-size: 24px;
     font-weight: bold;
@@ -540,6 +544,10 @@ nav{
     background-color: rgb(255, 255, 255);
     position: fixed;
     z-index: 1000;
+}
+
+nav a{
+    text-decoration: none;
 }
 
 nav .logo .logo1st{
@@ -1101,6 +1109,10 @@ nav{
     background-color: rgb(255, 255, 255);
     position: fixed;
     z-index: 1000;
+}
+
+nav a{
+    text-decoration: none;
 }
 
 nav .logo .logo1st{
