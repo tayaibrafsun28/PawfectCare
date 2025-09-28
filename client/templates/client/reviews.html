@@ -15,10 +15,10 @@
     <nav>
       <a href="{% url 'home' %}"><p class="logo"><span class="logo1st">PAWFECT</span> <span class="logo2nd">CARE</span></p></a>
       <ul>
-        <li><a href="{% url 'home' %}">HOME</a></li>
-        <li><a href="{% url 'services' %}">SERVICES</a></li>
-        <li><a href="{% url 'about' %}">ABOUT US</a></li>
-        <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+        <li><a href="{% url 'home' %}" class="navlinks">HOME</a></li>
+            <li ><a href="{% url 'services' %}" class="navlinks">SERVICES</a></li>
+            <li><a href="{% url 'about' %}" class="navlinks">ABOUT US</a></li>
+            <li><a href="{% url 'contact' %}" class="navlinks">CONTACT US</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'logout' %}" class="loginbtn">LOGOUT</a></li>
         {% else %}

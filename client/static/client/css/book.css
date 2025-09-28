@@ -71,7 +71,7 @@ nav ul li a{
 
 }
 
-nav ul li a::before{
+.navlinks::before{
     content: '';
     position: absolute;
     bottom: -5px;
@@ -82,9 +82,10 @@ nav ul li a::before{
     transition: all .5s;
 }
 
-nav ul li a:hover::before{
+.navlinks:hover::before{
     width: 100%;
 }
+
 
 nav ul .loginbtn{
     text-decoration: none;
