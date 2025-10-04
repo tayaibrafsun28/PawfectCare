@@ -187,6 +187,10 @@ footer{
     align-items: start;
 }
 
+footer a{
+    text-decoration: none;
+}
+
 footer .logo{
     font-size: 30px;
     color: rgb(252, 252, 252);
@@ -460,6 +464,10 @@ footer{
     gap: 3vh 3vw;
 }
 
+footer a{
+    text-decoration: none;
+}
+
 footer .logo, 
 footer .address{
     flex: 1 1 45%;
@@ -727,6 +735,10 @@ footer{
     justify-content: space-between;
     align-items: start;
     gap: 2vh 4vw;
+}
+
+footer a{
+    text-decoration: none;
 }
 
 footer .logo, 
